@@ -5,7 +5,6 @@ require.config
     foundation: '../../assets/js/foundation.min'
     modernizr: '../../assets/js/vendor/custom.modernizr'
     app: 'app'
-
   shim:
     'angular':
       exports : 'angular'
@@ -20,7 +19,6 @@ require.config
       exports : '$'
     'foundation':
       deps: ['jQuery']
-
   priority: ['jQuery','angular','foundation','app']
   urlArgs: 'v=1.01'
 
