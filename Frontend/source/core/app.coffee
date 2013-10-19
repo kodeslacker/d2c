@@ -17,9 +17,20 @@ define ['angular'], (angular) ->
           )
           deferred.promise
         ]
+
 # Routes are defined bellow
       $routeProvider.when '/',
         templateUrl : loadView('about')
         controller: 'about'
         resolve:
           first:loadController('about')
+
+      $routeProvider.when '/test',
+        templateUrl : loadView('about')
+        controller : 'about'
+        resolve:
+          first:loadController('about')
+
+    app.run ($rootScope)=>
+      $rootScope.$on '$viewContentLoaded', ()=>
+        $(document).foundation()

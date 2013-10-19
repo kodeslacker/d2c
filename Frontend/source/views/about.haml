@@ -1,2 +1,14 @@
-%h1 Zenware-DNA
-%h2 Version: {{info}}
+%form{"data-abide" => ""}
+  .name-field
+    %label
+      Your name
+      %small required
+    %input{pattern: "[a-zA-Z]+", required: "", type: "text"}/
+    %small.error Name is required and must be a string.
+  .email-field
+    %label
+      Email
+      %small required
+    %input{required: "", type: "email"}/
+    %small.error An email address is required.
+  %button{type: "submit"} Submit
