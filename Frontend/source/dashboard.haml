@@ -1,0 +1,108 @@
+!!!
+%html
+  %head
+    %title Wellcome to Sabi
+    %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}
+    %link{:rel=>'stylesheet',:href=>'assets/css/foundation.min.css'}
+    %link{:rel=>'stylesheet',:href=>'assets/css/app.css'}
+    %script{:src=>'assets/js/pace/pace.min.js'}
+    %link{:rel=>'stylesheet',:href=>'assets/css/pace.css'}
+    %link{:rel=>'stylesheet',:href=>'assets/css/accessibility_foundicons.css'}
+  %body{'ng-cloak' => ''}
+    %nav.top-bar
+      %ul.title-area
+        %li.name
+          %h1
+            %a{href: "/"} SABi
+        %li.toggle-topbar.menu-icon
+          %a{href: "#"}
+            %span Menu
+      %section.top-bar-section
+        %ul.right
+          %li
+            %a{href: "/dashboard"} Home-Icon
+          %li.divider
+          %li.has-dropdown
+            %a{href:'#'} Menu-Icon
+            %ul.dropdown
+              %li
+                %a{href:'#'} Initiativa SABi
+              %li
+                %a{href:'#'} Servicii
+              %li
+                %a{href:'#'} Cercetare
+              %li
+                %a{href:'#'} Comunitate
+              %li
+                %a{href:'#'} Contact
+              %li.divider
+              %li
+                %a.foundicon-eject{href:'#'} &nbspLogout
+    .row
+      .large-12.columns
+        %h1 That strange menu
+        %hr
+
+    .row
+      .large-9.push-3.columns{'ng-view'=>''}
+        %script{'data-main' => 'core/config.js', :src => 'core/lib/require/require.js', :type => 'text/javascript'}
+
+      .large-3.pull-9.columns
+        .section-container.accordion{'data-section' => 'accordion'}
+          %section.active
+            %p.title{'data-section-title'=>''}
+              %a{:href => "#"} Profil
+            .content{'data-section-content' => ''}
+              %p - Identitatea Companiei
+              %p - Portofoliu de Branduri
+              %p
+                %a -- Comp. Portofoliului
+              %p
+                %a -- Arhitectura Portofoliului
+              %p
+                %a -- Stadiul de dezvoltare
+              %p
+                %a -- Segmentarea pietei
+              %p
+                %a - Situatia Financiara
+              %p
+                %a -- Indicatori financiari
+              %p
+                %a -- Defasuratorul vanzarilor
+              %p
+                %a -- Investitia in media
+          %hr
+        .section-container.accordion{'data-section' => 'accordion'}
+          %section.active
+            %p.title{'data-section-title'=>''}
+              %a{:href => "#"} Analize
+            .content{'data-section-content' => ''}
+              %p - Situatia brandului
+              %p
+                %a -- Indicatori de stare
+              %p
+                %a -- Indicatori de evolutie
+              %p
+                %a -- Previziuni
+              %p - Statistici comparative
+              %p
+                %a -- Branduri
+              %p
+                %a -- Sectoare
+              %p
+                %a -- Industrii
+          %hr
+        .section-container.accordion{'data-section' => 'accordion'}
+          %section.active
+            %p.title{'data-section-title'=>''}
+              %a{:href => "#"} Simulari
+            .content{'data-section-content' => ''}
+              %p - Constructie Scenariu
+              %p
+                %a - Modelare dinamica
+          %hr
+
+    .div#footer
+
+
+  %script

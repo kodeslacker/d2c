@@ -1,18 +1,3 @@
-%script{:src=>'assets/js/foundation/foundation.abide.js'}
-%form{"data-abide" => ""}
-  .name-field
-    %label
-      Your name
-      %small required
-    %input{pattern: "[a-zA-Z]+", required: "", type: "text"}/
-    %small.error Name is required and must be a string.
-  .email-field
-    %label
-      Email
-      %small required
-    %input{required: "", type: "email"}/
-    %small.error An email address is required.
-  %button{type: "submit"} Submit
-
-  %a{:href=>'#/test'} bla bla1
-  %a{:href=>'#/'} bla bla2
+.row
+  .large-12.large-centered.columns
+    %h1 SABi - Landing Page

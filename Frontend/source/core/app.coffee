@@ -25,9 +25,21 @@ define ['angular'], (angular) ->
         resolve:
           first:loadController('about')
 
-      $routeProvider.when '/test',
-        templateUrl : loadView('about')
+      $routeProvider.when '/login',
+        templateUrl : loadView('login')
         controller : 'about'
+        resolve:
+          first:loadController('about')
+
+      $routeProvider.when '/register',
+        templateUrl: loadView('register')
+        controller: 'about'
+        resolve:
+          first:loadController('about')
+
+      $routeProvider.when '/recover',
+        templateUrl: loadView('recover')
+        controller: 'about'
         resolve:
           first:loadController('about')
 
