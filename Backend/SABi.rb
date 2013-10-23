@@ -2,9 +2,5 @@ require 'rubygems'
 require 'sinatra'
 
 get '/test' do
-  'HELLO WORLD!'
-end
-
-get 'test2' do
-  'Hello world again'
+  'HELLO WORLD! 2 3 4'
 end

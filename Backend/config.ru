@@ -1,6 +1,15 @@
+
+require 'rubygems'
+require 'sinatra'
+require 'rack/reloader'
 require './SABi'
 
-configure(:production){puts 'Running SABi in production mode!'}
-configure(:development){puts 'Running SABi in development mode!'}
+set :environment, :development
 
-run Sinatra::Application.new
+configure(:production){puts 'Running SABi in production mode!'}
+
+configure :development do
+  puts 'Running SABi in development mode'
+end
+
+run Sinatra::Application
