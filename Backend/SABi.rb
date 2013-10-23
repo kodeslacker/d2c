@@ -1,6 +1,10 @@
-require 'rubygems'
 require 'sinatra'
+require 'sinatra/activerecord'
 
-get '/test' do
-  'HELLO WORLD! 2 3 4'
+Dir['source/Controllers/**/*.rb'].each do |file|
+  puts "Loading #{file}\n"
+  require File.expand_path(file)
 end
+
+set :database, 'sqlite3:///SABi.db'
+

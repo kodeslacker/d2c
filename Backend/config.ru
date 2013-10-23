@@ -1,7 +1,5 @@
-
 require 'rubygems'
 require 'sinatra'
-require 'rack/reloader'
 require './SABi'
 
 set :environment, :development

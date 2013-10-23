@@ -1,0 +1,3 @@
+# Rakefile
+require './SABi'
+require 'sinatra/activerecord/rake'
