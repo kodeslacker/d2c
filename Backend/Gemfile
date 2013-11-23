@@ -3,6 +3,10 @@ gem 'sinatra'
 gem 'sqlite3'
 gem 'activerecord'
 gem 'sinatra-activerecord'
+gem 'sinatra-cross_origin', '~> 0.2.0'
+gem 'oj', '~> 2.2.1'
+
+
 
 group :development do
   gem 'shotgun'

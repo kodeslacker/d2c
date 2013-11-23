@@ -1,15 +1,14 @@
 require 'rubygems'
 require 'sinatra'
-require './SABi'
+require './d2c'
 
 
 set :environment, :development
 
-configure(:production){puts 'Running SABi in production mode!'}
+configure(:production){puts 'Running d2c in production mode!'}
 
 configure :development do
-  puts 'Running SABi in development mode'
-  enable :cross_origin
+  puts 'Running d2c in development mode'
 end
 
 run Sinatra::Application
