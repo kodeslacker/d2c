@@ -1,12 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat)
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
 $font-size-base ?= 18px
 $font-family-monospace ?= "Courier New", monospace;
-// $text-color ?= white
 @import 'bootstrap/_bootstrap'
 
 .hidden
   display: none
-
 
 header
   h1
@@ -30,3 +29,25 @@ header
 
 pre.lead
   font-size: 30px
+
+.dashboard-menu
+  .btn
+    width: 25%
+
+.maintenance
+  .lead, h1
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif
+    margin: 0px
+  
+  .consumer
+    &:first-child
+      h1
+        color: $brand-success
+    &:last-child
+      h1
+        color: $brand-danger
+  
+  h1
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-weight: 100
+    font-size: 60px
