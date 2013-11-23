@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131123100720) do
+ActiveRecord::Schema.define(version: 20131123110628) do
+
+  create_table "consumer_updates", force: true do |t|
+    t.string "status"
+    t.string "name"
+    t.string "consumerType"
+  end
 
   create_table "consumers", force: true do |t|
     t.string "status"
