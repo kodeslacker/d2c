@@ -5,7 +5,7 @@ require 'sinatra/activerecord'
 
 #Settings
 set :port, 5445
-set :database, 'sqlite3:///SABi.db'
+set :database, 'sqlite3:///d2c.db'
 set :protection, false
 set :protection, except: :http_origin
 
