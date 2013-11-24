@@ -1,1 +1,1 @@
-/Users/tvararu/Github/d2c/frontend/Procfile
+web: node server.js
