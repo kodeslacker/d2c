@@ -4,8 +4,9 @@ class CreateConsumerUpdates < ActiveRecord::Migration
       t.string :status
       t.string :name
       t.string :consumerType
+      t.timestamps
     end
-    ConsumerUpdate.create(:status=>'2%',:name=>'Kitchen light',:consumerType=>'caca')
+    ConsumerUpdate.create(:status=>'2',:name=>'Kitchen light',:consumerType=>'caca')
   end
 
   def down
