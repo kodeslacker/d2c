@@ -27,6 +27,26 @@ function send(data, callback){
 
 function send_all(){
 
+    var data = JSON.stringify(toSend);
+    console.log("Trying to send " + data.length + " bytes");
+
+    request.post({
+        url: config.DOMUS_API_URI + '/submitBulkConsumers',
+        body: data
+    }, function(error, response){
+
+      if (!error && response.statusCode == 200) {
+        // slow down the process
+        // otherwise we get BusyException from SQLite
+        return;
+      }
+
+      console.log('Error :(');
+      console.log(error);
+    });
+
+    return;
+
     console.log('Items left: ' + toSend.length);
 
     if(toSend.length == 0) {
