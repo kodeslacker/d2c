@@ -5783,9 +5783,6 @@ header h1 {
 pre.lead {
   font-size: 30px;
 }
-.dashboard-menu .btn {
-  width: 25%;
-}
 .maintenance .lead,
 .maintenance h1 {
   font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5829,4 +5826,16 @@ pre.lead {
 .btn {
   -webkit-transition: background 0.3s linear;
   transition: background 0.3s linear;
+}
+canvas {
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+}
+.profile .lead {
+  margin: 0px;
+  margin-top: 25px;
+}
+.main-title a {
+  color: #fff !important;
 }

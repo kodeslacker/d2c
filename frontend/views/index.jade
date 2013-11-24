@@ -9,15 +9,16 @@ html(ng-app="domus")
     title domus.io
     link(rel='stylesheet', href='css/master.css')
     link(rel='stylesheet', href='components/toastr/toastr.css')
-    script.
-      
     
   body
     .container
       .row
         .col-lg-6.col-lg-offset-3.col-xs-12
           header.text-center
-            h1 domus.io
+            h1.main-title
+              a(href="#/") domus.io
+          span#signinButton
+            span.g-signin(data-callback="signinCallback", data-clientid="474025689470-7rvnqmptj73i9gu1k3codb9chshuft1r.apps.googleusercontent.com", data-cookiepolicy="single_host_origin", data-requestvisibleactions="http://schemas.google.com/AddActivity", data-scope="https://www.googleapis.com/auth/plus.login")
       .view(ng-view)
   
   :coffeescript
@@ -25,9 +26,10 @@ html(ng-app="domus")
       if authResult["access_token"]
         $("#signinButton").addClass 'hidden'
         gapi.client.load('plus', 'v1', ->
-          request = gapi.client.plus.people.get('userId': 'me')
+          request = gapi.client.plus.people.get('userId': 'me', 'displayName': 'me')
           request.execute (resp) ->
-            console.log(resp.id)
+            window.gapi_id = resp.id
+            window.display_name = resp.displayName
         )
       else
         console.log "Sign-in state: " + authResult["error"]  if authResult["error"]

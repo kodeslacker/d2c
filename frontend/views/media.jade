@@ -1,10 +1,7 @@
 .row
   .col-lg-6.col-lg-offset-3.col-xs-12
+    include _dashboard_menu
     .panel.panel-default.videos
-      .panel-heading.text-center
-        a.lead(href="#/dashboard") Dashboard
-      .panel-body
-        include _dashboard_menu
       .panel-body
         .input-group.input-group-lg
           input.form-control(type="text", placeholder="Search YouTube", ng-model="query")

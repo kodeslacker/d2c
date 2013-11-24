@@ -21,8 +21,9 @@ $ ->
   FastClick.attach(document.body)
 
 window.App = {}
-# App.backendPath = "http://172.28.101.19:9393/"
-App.backendPath = "http://192.168.0.107:9393/"
+App.backendPath = "http://172.28.101.19:9393/"
+# App.backendPath = "http://192.168.0.107:9393/"
+# App.backendPath = "http://192.168.43.171:9393/"
 
 domus = angular.module("domus", [])
 domus.config ["$routeProvider", ($routeProvider) ->
@@ -30,7 +31,7 @@ domus.config ["$routeProvider", ($routeProvider) ->
     templateUrl: "main.html"
     controller: domusController
   $routeProvider.when "/dashboard",
-    templateUrl: "dashboard.html"
+    templateUrl: "profile.html"
     controller: domusController
   $routeProvider.when "/dashboard/maintenance",
     templateUrl: "maintenance.html"
@@ -58,6 +59,9 @@ domusController = ($scope, $http, $location) ->
     $http.get(App.backendPath + "checkDomusCode/" + $scope.code).success (data) ->
       if data is "true"
         $location.path '/dashboard'
+  
+  $scope.client_id = window.gapi_id
+  $scope.display_name = window.display_name
 
 maintenanceController = ($scope, $http, $location) ->
   $scope.getConsumers = ->
@@ -72,28 +76,44 @@ maintenanceController = ($scope, $http, $location) ->
 
 mediaController = ($scope, $http, $location) ->
   $scope.search = ->
-    $http.get(App.backendPath + "getVideos/" + $scope.query).success (data) ->
+    $http.get(App.backendPath + "getVideos/" + $scope.query.split(' ').join('+')).success (data) ->
       $scope.videos = data
   
   $scope.sendYoutube = (item) ->
-    console.log item
     toastr["info"]("The video should start playing shortly.", "Youtube request sent!")
-    $http.post(App.backendPath + "submitYoutubeUpdate/", item).success (data) ->
+    $http.post(App.backendPath + "submitMediaUpdate/" + item, {}).success (data) ->
       toastr[data.type](data.title, data.message)
-
+  
 chartsController = ($scope, $http, $location) ->
-  $http.get(App.backendPath + "getCharts").success (data) ->
-    chartData = {
-      labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]
-      datasets: [
-        {
-          fillColor : "rgba(151,187,205,0.5)",
-          strokeColor : "rgba(151,187,205,1)",
-          pointColor : "rgba(151,187,205,1)",
-          pointStrokeColor : "#fff",
-          data : data
-        }
-      ]
-    }
-    ctx = $("#myChart").get(0).getContext("2d")
-    new Chart(ctx).Line(chartData)
+  # $http.get(App.backendPath + "getCharts").success (data) ->
+  chartData = {
+    labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]
+    datasets: [
+      {
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        # data : data
+        data: [115, 234, 120, null, null, null]
+      }
+    ]
+  }
+  ctx = $("#chart-1").get(0).getContext("2d")
+  new Chart(ctx).Line(chartData)
+  
+  chartData = {
+    labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]
+    datasets: [
+      {
+        fillColor: "rgba(151,187,205,0.5)",
+        strokeColor: "rgba(151,187,205,1)",
+        pointColor: "rgba(151,187,205,1)",
+        pointStrokeColor: "#fff",
+        # data : data
+        data: [115, 234, 120, 37, 222, 800]
+      }
+    ]
+  }
+  ctx = $("#chart-2").get(0).getContext("2d")
+  new Chart(ctx).Line(chartData)

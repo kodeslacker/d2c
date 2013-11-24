@@ -26,7 +26,7 @@
 
   window.App = {};
 
-  App.backendPath = "http://192.168.0.107:9393/";
+  App.backendPath = "http://172.28.101.19:9393/";
 
   domus = angular.module("domus", []);
 
@@ -37,7 +37,7 @@
         controller: domusController
       });
       $routeProvider.when("/dashboard", {
-        templateUrl: "dashboard.html",
+        templateUrl: "profile.html",
         controller: domusController
       });
       $routeProvider.when("/dashboard/maintenance", {
@@ -67,13 +67,15 @@
         return $scope.code = data;
       });
     };
-    return $scope.checkDomusCode = function() {
+    $scope.checkDomusCode = function() {
       return $http.get(App.backendPath + "checkDomusCode/" + $scope.code).success(function(data) {
         if (data === "true") {
           return $location.path('/dashboard');
         }
       });
     };
+    $scope.client_id = window.gapi_id;
+    return $scope.display_name = window.display_name;
   };
 
   maintenanceController = function($scope, $http, $location) {
@@ -93,37 +95,48 @@
 
   mediaController = function($scope, $http, $location) {
     $scope.search = function() {
-      return $http.get(App.backendPath + "getVideos/" + $scope.query).success(function(data) {
+      return $http.get(App.backendPath + "getVideos/" + $scope.query.split(' ').join('+')).success(function(data) {
         return $scope.videos = data;
       });
     };
     return $scope.sendYoutube = function(item) {
-      console.log(item);
       toastr["info"]("The video should start playing shortly.", "Youtube request sent!");
-      return $http.post(App.backendPath + "submitYoutubeUpdate/", item).success(function(data) {
+      return $http.post(App.backendPath + "submitMediaUpdate/" + item, {}).success(function(data) {
         return toastr[data.type](data.title, data.message);
       });
     };
   };
 
   chartsController = function($scope, $http, $location) {
-    return $http.get(App.backendPath + "getCharts").success(function(data) {
-      var chartData, ctx;
-      chartData = {
-        labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
-        datasets: [
-          {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            data: data
-          }
-        ]
-      };
-      ctx = $("#myChart").get(0).getContext("2d");
-      return new Chart(ctx).Line(chartData);
-    });
+    var chartData, ctx;
+    chartData = {
+      labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
+      datasets: [
+        {
+          fillColor: "rgba(151,187,205,0.5)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          pointStrokeColor: "#fff",
+          data: [115, 234, 120, null, null, null]
+        }
+      ]
+    };
+    ctx = $("#chart-1").get(0).getContext("2d");
+    new Chart(ctx).Line(chartData);
+    chartData = {
+      labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
+      datasets: [
+        {
+          fillColor: "rgba(151,187,205,0.5)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)",
+          pointStrokeColor: "#fff",
+          data: [115, 234, 120, 37, 222, 800]
+        }
+      ]
+    };
+    ctx = $("#chart-2").get(0).getContext("2d");
+    return new Chart(ctx).Line(chartData);
   };
 
 }).call(this);

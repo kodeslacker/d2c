@@ -1,9 +1,7 @@
 .row
   .col-lg-6.col-lg-offset-3.col-xs-12
+    include _dashboard_menu
     .panel.panel-default
-      .panel-heading.text-center
-        a.lead(href="#/dashboard") Dashboard
-      .panel-body
-        include _dashboard_menu
       .panel-body.charts
-        canvas#myChart(width="300px", height="200px")
+        canvas#chart-1.chart(width="500px", height="200px")
+        canvas#chart-2.chart(width="500px", height="200px")
