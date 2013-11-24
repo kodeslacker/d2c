@@ -17,6 +17,9 @@ toastr.options = {
   "hideMethod": "fadeOut"
 }
 
+$ ->
+  FastClick.attach(document.body)
+
 window.App = {}
 # App.backendPath = "http://172.28.101.19:9393/"
 App.backendPath = "http://192.168.0.107:9393/"
@@ -80,7 +83,6 @@ mediaController = ($scope, $http, $location) ->
 
 chartsController = ($scope, $http, $location) ->
   $http.get(App.backendPath + "getCharts").success (data) ->
-    console.log data
     chartData = {
       labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]
       datasets: [

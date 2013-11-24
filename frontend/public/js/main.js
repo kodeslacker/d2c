@@ -20,6 +20,10 @@
     "hideMethod": "fadeOut"
   };
 
+  $(function() {
+    return FastClick.attach(document.body);
+  });
+
   window.App = {};
 
   App.backendPath = "http://192.168.0.107:9393/";
@@ -105,7 +109,6 @@
   chartsController = function($scope, $http, $location) {
     return $http.get(App.backendPath + "getCharts").success(function(data) {
       var chartData, ctx;
-      console.log(data);
       chartData = {
         labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
         datasets: [
