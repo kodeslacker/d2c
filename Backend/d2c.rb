@@ -9,6 +9,7 @@ set :database, 'sqlite3:///d2c.db'
 set :protection, false
 set :protection, except: :http_origin
 
+Rack::Utils.key_space_limit = 262144
 #CORS enable
 before do
   headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'

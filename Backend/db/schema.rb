@@ -13,17 +13,21 @@
 ActiveRecord::Schema.define(version: 20131123110628) do
 
   create_table "consumer_updates", force: true do |t|
-    t.string "status"
-    t.string "name"
-    t.string "consumerType"
+    t.string   "status"
+    t.string   "name"
+    t.string   "consumerType"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "consumers", force: true do |t|
-    t.string "status"
-    t.string "consumerType"
-    t.string "consumption"
-    t.string "name"
-    t.string "uptime"
+    t.string   "status"
+    t.string   "consumerType"
+    t.string   "consumption"
+    t.string   "name"
+    t.string   "inserted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

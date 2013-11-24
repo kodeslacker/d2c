@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/SABi.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Backend/source/Models/Toast.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/SABi.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/db/migrate/20131023141141_create_account.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/db/schema.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/source/Models/Account.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Backend/SABi.rb" afterPath="$PROJECT_DIR$/Backend/d2c.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/source/Controllers/Account.rb" afterPath="$PROJECT_DIR$/Backend/source/Controllers/Account.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Backend/source/Controllers/Media.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Backend/d2c.db" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/db/migrate/20131123100720_create_consumers.rb" afterPath="$PROJECT_DIR$/Backend/db/migrate/20131123100720_create_consumers.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb" afterPath="$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Gemfile.lock" afterPath="$PROJECT_DIR$/Backend/Gemfile.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Gemfile" afterPath="$PROJECT_DIR$/Backend/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/Rakefile" afterPath="$PROJECT_DIR$/Backend/Rakefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/config.ru" afterPath="$PROJECT_DIR$/Backend/config.ru" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SABi.iml" afterPath="$PROJECT_DIR$/.idea/SABi.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/d2c.rb" afterPath="$PROJECT_DIR$/Backend/d2c.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Backend/db/schema.rb" afterPath="$PROJECT_DIR$/Backend/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SABi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385198102349" ignored="false" />
+    <file path="/Dummy.txt" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385250256792" ignored="false" />
     <file path="/config.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384891430128" ignored="false" />
     <file path="/login.html" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384943075557" ignored="false" />
     <file path="/Login.coffee" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384946856223" ignored="false" />
@@ -30,14 +23,23 @@
     <file path="/20131023141141_create_account.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384895864322" ignored="false" />
     <file path="/20131119212246_Account.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384896333123" ignored="false" />
     <file path="/20131119212822_accounts.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384896549449" ignored="false" />
-    <file path="/Account.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384946289947" ignored="false" />
+    <file path="/Account.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385245452502" ignored="false" />
     <file path="/SABi.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384937043570" ignored="false" />
-    <file path="/Gemfile" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384901810172" ignored="false" />
-    <file path="/fragment.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384946032205" ignored="false" />
+    <file path="/Gemfile" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385249167408" ignored="false" />
+    <file path="/fragment.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385249820758" ignored="false" />
     <file path="/Toast.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384939532127" ignored="false" />
     <file path="/index.html" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1384973942590" ignored="false" />
     <file path="/temp.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385198223889" ignored="false" />
     <file path="/config.ru" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385198230915" ignored="false" />
+    <file path="/d2c.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385254484714" ignored="false" />
+    <file path="/Consumer.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385259467132" ignored="false" />
+    <file path="/20131123094200_consumer.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385201127934" ignored="false" />
+    <file path="/a.dummy" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385200095123" ignored="false" />
+    <file path="/20131123100720_create_consumers.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385250383225" ignored="false" />
+    <file path="/ConsumerUpdate.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385204603448" ignored="false" />
+    <file path="/20131123110628_create_consumerUpdates.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385225677828" ignored="false" />
+    <file path="/Domus.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385213596273" ignored="false" />
+    <file path="/Media.rb" changelist="d5a05ef2-2b41-4f3d-959a-eaaf2384602e" time="1385251629977" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,28 +59,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Account.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Account.rb">
+      <file leaf-file-name="Consumer.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="85" column="32" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.48727736">
+              <folding>
+                <element signature="e#110#463#0" expanded="false" />
+                <element signature="e#923#1108#0" expanded="false" />
+                <element signature="e#1265#2985#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20131123100720_create_consumers.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/db/migrate/20131123100720_create_consumers.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="24" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Backend/Gemfile">
+      <file leaf-file-name="Domus.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Domus.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.ru" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/config.ru">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="40" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+            <state line="5" column="16" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,16 +93,7 @@
       <file leaf-file-name="d2c.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Backend/d2c.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Toast.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Backend/source/Models/Toast.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="3" selection-start="111" selection-end="111" vertical-scroll-proportion="0.0">
+            <state line="20" column="39" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -120,22 +117,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Frontend/source/assets/scripts/login-soft.js" />
-        <option value="$PROJECT_DIR$/Backend/db/schema.rb" />
-        <option value="$PROJECT_DIR$/Backend/db/migrate/20131023141141_create_account.rb" />
-        <option value="$PROJECT_DIR$/Backend/db/migrate/20131119212246_Account.rb" />
-        <option value="$PROJECT_DIR$/Backend/db/migrate/20131119212822_accounts.rb" />
-        <option value="$PROJECT_DIR$/Backend/Gemfile" />
-        <option value="$PROJECT_DIR$/Backend/source/Models/Account.rb" />
-        <option value="$PROJECT_DIR$/Backend/SABi.rb" />
-        <option value="$PROJECT_DIR$/Backend/source/Models/Toast.rb" />
-        <option value="$PROJECT_DIR$/Frontend/source/assets/css/toastr.css" />
-        <option value="$PROJECT_DIR$/Frontend/source/login.html" />
-        <option value="$PROJECT_DIR$/Frontend/source/assets/scripts/Controllers/Account/Login.coffee" />
         <option value="$PROJECT_DIR$/Frontend/source/index.html" />
         <option value="$PROJECT_DIR$/Backend/db/migrate/20131120190912_Profile.rb" />
         <option value="$PROJECT_DIR$/Backend/config.ru" />
+        <option value="$PROJECT_DIR$/Backend/db/migrate/20131123094200_consumer.rb" />
         <option value="$PROJECT_DIR$/Backend/source/Controllers/Account.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Models/ConsumerUpdate.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Models/my_script.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Models/Consumer.rb" />
+        <option value="$PROJECT_DIR$/Backend/db/migrate/20131123110628_create_consumerUpdates.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Controllers/Domus.rb" />
+        <option value="$PROJECT_DIR$/Backend/db/migrate/20131123110628_create_consumer_updates.rb" />
+        <option value="$PROJECT_DIR$/Backend/Gemfile" />
+        <option value="$PROJECT_DIR$/Backend/db/migrate/20131123100720_create_consumers.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Controllers/Media.rb" />
+        <option value="$PROJECT_DIR$/Backend/d2c.rb" />
+        <option value="$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb" />
       </list>
     </option>
   </component>
@@ -270,6 +267,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SABi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="d2c" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SABi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="d2c" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -475,7 +512,7 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/Backend/d2c.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="-o 0.0.0.0" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
@@ -483,8 +520,8 @@
       <method />
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Ruby.Unnamed" />
-      <item index="1" class="java.lang.String" itemvalue="Rack.config.ru" />
+      <item index="0" class="java.lang.String" itemvalue="Rack.config.ru" />
+      <item index="1" class="java.lang.String" itemvalue="Ruby.Unnamed" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -510,11 +547,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.312769" sideWeight="0.6711004" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5117967" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2661406" sideWeight="0.4885127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5114873" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889965" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -583,22 +620,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb</url>
+          <line>19</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="23" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/site_ruby/2.0.0/rubygems/core_ext/kernel_require.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2067" selection-end="2067" vertical-scroll-proportion="0.33203885" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/querying.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.029126214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247/gems/sinatra-1.4.4/lib/sinatra/show_exceptions.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="972" selection-end="972" vertical-scroll-proportion="0.3184466" />
@@ -616,7 +648,9 @@
     </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247/gems/rack-protection-1.5.1/lib/rack/protection/path_traversal.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.49514562" />
+        <state line="17" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.49514562">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247/gems/sinatra-1.4.4/lib/sinatra/base.rb">
@@ -626,9 +660,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/d2c.rb">
+    <entry file="file://$PROJECT_DIR$/Backend/config.ru">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+        <state line="7" column="40" selection-start="127" selection-end="127" vertical-scroll-proportion="0.13141426">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/source/Models/Consumer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -640,24 +681,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/config.ru">
+    <entry file="file://$PROJECT_DIR$/Backend/db/migrate/20131123110628_create_consumer_updates.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="40" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Account.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Backend/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p247/gems/rack-1.5.2/lib/rack/utils.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="516" column="0" selection-start="15360" selection-end="15360" vertical-scroll-proportion="1.5068836">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Media.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="19" selection-end="19" vertical-scroll-proportion="0.01908397">
+          <folding>
+            <element signature="e#62#696#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Domus.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/d2c.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="39" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/db/migrate/20131123100720_create_consumers.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="24" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Backend/source/Controllers/Consumer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="32" selection-start="3019" selection-end="3019" vertical-scroll-proportion="0.48727736">
+          <folding>
+            <element signature="e#110#463#0" expanded="false" />
+            <element signature="e#923#1108#0" expanded="false" />
+            <element signature="e#1265#2985#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

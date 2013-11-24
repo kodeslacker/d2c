@@ -5,9 +5,9 @@ class CreateConsumers < ActiveRecord::Migration
       t.string :consumerType
       t.string :consumption
       t.string :name
-      t.string :uptime
+      t.string :inserted_at
+      t.timestamps
     end
-    Consumer.create(:status=>'73%',:consumerType=>'caca',:consumption=>'20W',:name=>'Kitchen light',:uptime=>'4h')
   end
 
   def down
