@@ -1,0 +1,47 @@
+!!!
+html(ng-app="domus")
+  head
+    meta(charset='utf8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+    meta(name='description', content='domus.io')
+    meta(name='author', content= "0xDEF")
+    meta(name="viewport", content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no")
+    title domus.io
+    link(rel='stylesheet', href='css/master.css')
+    link(rel='stylesheet', href='components/toastr/toastr.css')
+    script.
+      
+    
+  body
+    .container
+      .row
+        .col-lg-6.col-lg-offset-3.col-xs-12
+          header.text-center
+            h1 domus.io
+      .view(ng-view)
+  
+  :coffeescript
+    window.signinCallback = (authResult) ->
+      if authResult["access_token"]
+        $("#signinButton").addClass 'hidden'
+        gapi.client.load('plus', 'v1', ->
+          request = gapi.client.plus.people.get('userId': 'me')
+          request.execute (resp) ->
+            console.log(resp.id)
+        )
+      else
+        console.log "Sign-in state: " + authResult["error"]  if authResult["error"]
+
+  script(src="components/jquery/jquery.js")
+  script(src="components/backstretch/backstretch.js")
+  script(src="components/toastr/toastr.min.js")
+  script(src="components/ng/angular.js")
+  script(src="components/gplus/gplus.js")
+  script(src="components/bootstrap/js/bootstrap.min.js")
+  script(src="components/pace/pace.js")
+  script(src="components/chart/chart.js")
+  script(src="js/main.js")
+  
+  != livereload
+  
+  

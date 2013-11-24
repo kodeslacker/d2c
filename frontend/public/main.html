@@ -1,0 +1,15 @@
+
+<div ng-init="getDomusCode()" class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        <div class="lead">No homes yet :c</div>
+      </div>
+      <div class="panel-body">
+        <p>No RaspberryPi is connected to your account yet. Please add one using the following code:</p>
+        <pre class="lead text-center">{{code}}</pre>
+        <button ng-click="checkDomusCode()" class="btn btn-lg btn-success btn-block">Done!</button>
+      </div>
+    </div>
+  </div>
+</div>

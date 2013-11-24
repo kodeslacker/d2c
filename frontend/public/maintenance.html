@@ -1,0 +1,30 @@
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center"><a href="#/dashboard" class="lead">Dashboard</a></div>
+      <div class="panel-body">
+        <div class="btn-group btn-block dashboard-menu"><a class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-user"></span></a><a href="#/dashboard/media" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-music"></span></a><a href="#/dashboard/maintenance" class="btn btn-lg btn-warning"><span class="glyphicon glyphicon-home"></span></a><a href="#/dashboard/charts" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-tasks"></span></a></div>
+      </div>
+      <div ng-init="getConsumers()" class="panel-body maintenance">
+        <div ng-repeat="consumer in consumers" class="well well-sm consumer">
+          <div class="row">
+            <div class="col-xs-10">
+              <div class="lead">{{consumer.attributes.name}}</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="label label-success pull-right">{{consumer.attributes.status}}%</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4"><h1 ng-class="{true: 'green', false: 'red'}[consumer.attributes.consumption < 200]">{{consumer.attributes.consumption}}W</h1></div>
+            <div class="col-xs-6 pull-right range">
+              <input ng-model="consumer.attributes.status" type="range" min="0" max="100" step="1" value="0" class="col-xs-12"/><br/>
+              <button id="consumer-{{consumer.attributes.id}}" type="button" ng-click="updateConsumer(consumer.attributes)" data-loading-text="Updating..." class="btn btn-sm btn-info btn-block">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

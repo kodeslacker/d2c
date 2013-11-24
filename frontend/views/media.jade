@@ -1,0 +1,17 @@
+.row
+  .col-lg-6.col-lg-offset-3.col-xs-12
+    .panel.panel-default.videos
+      .panel-heading.text-center
+        a.lead(href="#/dashboard") Dashboard
+      .panel-body
+        include _dashboard_menu
+      .panel-body
+        .input-group.input-group-lg
+          input.form-control(type="text", placeholder="Search YouTube", ng-model="query")
+          span.input-group-btn
+            button.btn.btn-default(type="button", ng-click="search()")
+              span.glyphicon.glyphicon-search
+      .row
+        .col-xs-12(ng-repeat="video in videos")
+          .media.parallax(style="background-image: url('http://i1.ytimg.com/vi/{{video.url}}/mqdefault.jpg')", ng-click="sendYoutube(video.url)")
+            .lead {{video.title}}

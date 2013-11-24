@@ -1,0 +1,22 @@
+.row
+  .col-lg-6.col-lg-offset-3.col-xs-12
+    .panel.panel-default
+      .panel-heading.text-center
+        a.lead(href="#/dashboard") Dashboard
+      .panel-body
+        include _dashboard_menu
+      .panel-body.maintenance(ng-init="getConsumers()")
+        .well.well-sm.consumer(ng-repeat="consumer in consumers")
+          .row
+            .col-xs-10
+              .lead {{consumer.attributes.name}}
+            .col-xs-2
+              .label.label-success.pull-right {{consumer.attributes.status}}%
+          
+          .row
+            .col-xs-4
+              | <h1 ng-class="{true: 'green', false: 'red'}[consumer.attributes.consumption < 200]">{{consumer.attributes.consumption}}W</h1>
+            .col-xs-6.pull-right.range
+              input.col-xs-12(ng-model="consumer.attributes.status", type="range", min="0", max="100", step="1", value="0")
+              br
+              button.btn.btn-sm.btn-info.btn-block(id="consumer-{{consumer.attributes.id}}", type="button", ng-click="updateConsumer(consumer.attributes)", data-loading-text="Updating...") Update

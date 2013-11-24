@@ -1,0 +1,7 @@
+{
+  "name": "domus",
+  "description": "Domus.io house monitoring",
+  "dependencies": {
+  	"request": "2.27.x"
+  }
+}
