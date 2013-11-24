@@ -27,6 +27,26 @@ function send(data, callback){
 
 function send_all(){
 
+    var data = JSON.stringify(toSend);
+    console.log("Trying to send " + data.length + " bytes");
+
+    request.post({
+        url: config.DOMUS_API_URI + '/submitBulkConsumers',
+        body: data
+    }, function(error, response){
+
+      if (!error && response.statusCode == 200) {
+        // slow down the process
+        // otherwise we get BusyException from SQLite
+        return;
+      }
+
+      console.log('Error :(');
+      console.log(error);
+    });
+
+    return;
+
     console.log('Items left: ' + toSend.length);
 
     if(toSend.length == 0) {
@@ -42,7 +62,8 @@ var toSend = [];
 for (var s = 0; s <= 172800; s += 600) {
 // for (var s = 0; s <= 1800; s += 600) {
 
-    var date = new Date( (1385010600 + s) * 1000 );
+    var unix = (1385010600 + s);
+    var date = new Date( unix * 1000 );
     devices.setDate(date);
 
     console.log("Generating data for: " + date);
@@ -102,7 +123,7 @@ for (var s = 0; s <= 172800; s += 600) {
             "consumerType": consumers[i].type,
             "consumption": consumption,
             "name": consumers[i].name,
-            "inserted_at": phpdate("Y-m-d H:i:s")
+            "inserted_at": phpdate("Y-m-d H:i:s", unix)
         };
 
         toSend.push(consumer);
