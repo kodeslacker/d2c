@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131123110628) do
     t.string   "consumerType"
     t.string   "consumption"
     t.string   "name"
+    t.string   "inserted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
