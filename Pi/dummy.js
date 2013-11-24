@@ -1,19 +1,53 @@
 var devices = require('./devices')
     request = require('request')
-    phpdate = require('./date').date;
+    phpdate = require('./date').date,
+    config = require('./config');
 
-function send(data){
+function send(data, callback){
+
     var json = JSON.stringify(data);
+    console.log("Sending: " + json);
+
+    request.post({
+        url: config.DOMUS_API_URI + '/submitConsumer',
+        body: json
+    }, function(error, response){
+
+      if (!error && response.statusCode == 200) {
+        // slow down the process
+        // otherwise we get BusyException from SQLite
+        setTimeout(callback, 50);
+        return;
+      }
+
+      console.log('Error :(');
+
+    });
 }
 
-for (var i = 0; i <= 172800; i += 600) {
-// for (var i = 0; i <= 1800; i += 600) {
+function send_all(){
 
-    var date = new Date( (1385010600 + i) * 1000 );
+    console.log('Items left: ' + toSend.length);
+
+    if(toSend.length == 0) {
+        console.log("Finished!");
+        return;
+    }
+
+    send(toSend.pop(), send_all);
+}
+
+var toSend = [];
+
+for (var s = 0; s <= 172800; s += 600) {
+// for (var s = 0; s <= 1800; s += 600) {
+
+    var date = new Date( (1385010600 + s) * 1000 );
     devices.setDate(date);
 
-    console.log("Inserting data for: " + date + "\n");
+    console.log("Generating data for: " + date);
 
+    /* they refused to create  */
     var consumers = {
         "kitchenLight": {
             power: 100,
@@ -68,11 +102,13 @@ for (var i = 0; i <= 172800; i += 600) {
             "consumerType": consumers[i].type,
             "consumption": consumption,
             "name": consumers[i].name,
-            "created_at": phpdate("Y-m-d H:i:s")
+            "inserted_at": phpdate("Y-m-d H:i:s")
         };
 
-        send(consumer);
+        toSend.push(consumer);
     }
+
+    console.log("========================");
 
     // curl -d '{"status":"0","consumerType":"light","consumption":"100W","name":"Kitchen Light"}' 192.168.0.107:9393/submitConsumer
 
@@ -86,3 +122,5 @@ for (var i = 0; i <= 172800; i += 600) {
     // console.log('livingroomTV: ' + devices.livingroomTV());  
 
 }
+
+send_all();

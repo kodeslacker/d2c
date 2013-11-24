@@ -1,3 +1,3 @@
 module.exports = {
-    DOMUS_API_URI: "http://172.28.101.19:9393/",
+    DOMUS_API_URI: "http://192.168.0.107:9393/",
 }
