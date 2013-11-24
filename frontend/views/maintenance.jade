@@ -15,8 +15,8 @@
           
           .row
             .col-xs-4
-              h1 {{consumer.attributes.consumption}}
+              | <h1 ng-class="{true: 'green', false: 'red'}[consumer.attributes.consumption < 200]">{{consumer.attributes.consumption}}W</h1>
             .col-xs-6.pull-right.range
               input.col-xs-12(ng-model="consumer.attributes.status", type="range", min="0", max="100", step="1", value="0")
               br
-              .btn.btn-xs.btn-info.btn-block(ng-click="updateConsumer(consumer.attributes)") Update
+              button.btn.btn-sm.btn-info.btn-block(id="consumer-{{consumer.attributes.id}}", type="button", ng-click="updateConsumer(consumer.attributes)", data-loading-text="Updating...") Update
