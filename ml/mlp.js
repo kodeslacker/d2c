@@ -1,5 +1,5 @@
 /* Dear reader, this code works, i've tested last night on a small training set but we didn't have enought time to integrate in our core. Maybe next time. Anyways, it worth mentioning. 
-you node-ml, several phpjs functions, request, math and readline 
+you need some node-ml nodejs library along with several phpjs functions; also request, math and readline from nodejs are requeired 
 */ 
 var mlp = require("../lib/index").perceptrons.MultiLayerPerceptron,
     readline = require("readline"),
