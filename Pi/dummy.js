@@ -62,7 +62,8 @@ var toSend = [];
 for (var s = 0; s <= 172800; s += 600) {
 // for (var s = 0; s <= 1800; s += 600) {
 
-    var date = new Date( (1385010600 + s) * 1000 );
+    var unix = (1385010600 + s);
+    var date = new Date( unix * 1000 );
     devices.setDate(date);
 
     console.log("Generating data for: " + date);
@@ -122,7 +123,7 @@ for (var s = 0; s <= 172800; s += 600) {
             "consumerType": consumers[i].type,
             "consumption": consumption,
             "name": consumers[i].name,
-            "inserted_at": phpdate("Y-m-d H:i:s")
+            "inserted_at": phpdate("Y-m-d H:i:s", unix)
         };
 
         toSend.push(consumer);
