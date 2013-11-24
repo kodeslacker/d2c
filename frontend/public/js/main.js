@@ -1,5 +1,5 @@
 (function() {
-  var consumerUpdateController, domus, domusController, maintenanceController, mediaController;
+  var chartsController, consumerUpdateController, domus, domusController, maintenanceController, mediaController;
 
   console.log("Javascript loaded");
 
@@ -40,9 +40,13 @@
         templateUrl: "maintenance.html",
         controller: maintenanceController
       });
-      return $routeProvider.when("/dashboard/media", {
+      $routeProvider.when("/dashboard/media", {
         templateUrl: "media.html",
         controller: mediaController
+      });
+      return $routeProvider.when("/dashboard/charts", {
+        templateUrl: "charts.html",
+        controller: chartsController
       });
     }
   ]);
@@ -76,7 +80,7 @@
     };
     return $scope.updateConsumer = function(item) {
       $("#consumer-" + item.id).button('loading');
-      return $http.post(App.backendPath + "submitConsumerUpdate/", item).success(function(data) {
+      return $http.post(App.backendPath + "submitConsumerUpdate", item).success(function(data) {
         toastr[data.type](data.title, data.message);
         return $scope.getConsumers();
       });
@@ -96,6 +100,27 @@
         return toastr[data.type](data.title, data.message);
       });
     };
+  };
+
+  chartsController = function($scope, $http, $location) {
+    return $http.get(App.backendPath + "getCharts").success(function(data) {
+      var chartData, ctx;
+      console.log(data);
+      chartData = {
+        labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"],
+        datasets: [
+          {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            data: data
+          }
+        ]
+      };
+      ctx = $("#myChart").get(0).getContext("2d");
+      return new Chart(ctx).Line(chartData);
+    });
   };
 
 }).call(this);

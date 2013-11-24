@@ -35,6 +35,9 @@ domus.config ["$routeProvider", ($routeProvider) ->
   $routeProvider.when "/dashboard/media",
     templateUrl: "media.html"
     controller: mediaController
+  $routeProvider.when "/dashboard/charts",
+    templateUrl: "charts.html"
+    controller: chartsController
 ]
 
 consumerUpdateController = ($scope, $http) ->
@@ -60,7 +63,7 @@ maintenanceController = ($scope, $http, $location) ->
   
   $scope.updateConsumer = (item) ->
     $("#consumer-" + item.id).button('loading')
-    $http.post(App.backendPath + "submitConsumerUpdate/", item).success (data) ->
+    $http.post(App.backendPath + "submitConsumerUpdate", item).success (data) ->
       toastr[data.type](data.title, data.message)
       $scope.getConsumers()
 
@@ -74,3 +77,21 @@ mediaController = ($scope, $http, $location) ->
     toastr["info"]("The video should start playing shortly.", "Youtube request sent!")
     $http.post(App.backendPath + "submitYoutubeUpdate/", item).success (data) ->
       toastr[data.type](data.title, data.message)
+
+chartsController = ($scope, $http, $location) ->
+  $http.get(App.backendPath + "getCharts").success (data) ->
+    console.log data
+    chartData = {
+      labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00"]
+      datasets: [
+        {
+          fillColor : "rgba(151,187,205,0.5)",
+          strokeColor : "rgba(151,187,205,1)",
+          pointColor : "rgba(151,187,205,1)",
+          pointStrokeColor : "#fff",
+          data : data
+        }
+      ]
+    }
+    ctx = $("#myChart").get(0).getContext("2d")
+    new Chart(ctx).Line(chartData)

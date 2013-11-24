@@ -52,6 +52,7 @@
   <script src="components/gplus/gplus.js"></script>
   <script src="components/bootstrap/js/bootstrap.min.js"></script>
   <script src="components/pace/pace.js"></script>
+  <script src="components/chart/chart.js"></script>
   <script src="js/main.js"></script><script>protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
 socket.onmessage = function(msg) {
   msg.data == 'reload' && window.location.reload();
